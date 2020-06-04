@@ -77,6 +77,20 @@ void CaluateLeafNum(BinaryNode *root,int* number){
     
 }
 
+
+#pragma mark -
+#pragma mark 计算高度
+int CalculateLeafDeep(BinaryNode *rootNode){
+    if(rootNode == NULL){
+        return 0;
+    }
+    
+    int leftDeep = CalculateLeafDeep(rootNode->leftChild);
+    int rightDeep = CalculateLeafDeep(rootNode->rightChild);
+    int deep = leftDeep>rightDeep?(leftDeep+1):(rightDeep+1);
+    return deep;
+}
+
 #pragma mark -
 #pragma mark 递归-中序遍历
 void LastRecusion(BinaryNode *node){
@@ -168,6 +182,9 @@ void CreateBinaryTree(){
     
     FreeBinaryTree(newRoot);
     printf("\n");
+    
+    int deep = CalculateLeafDeep(&node1);
+    printf("树的高度:%d\n",deep);
 
 }
 
