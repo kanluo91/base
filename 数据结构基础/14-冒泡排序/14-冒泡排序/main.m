@@ -93,8 +93,6 @@ void BubbleSort3(int *array,int len){
     }
 }
 
-
-
 void printArray(int *arr,int len){
     
     int i = 0;
