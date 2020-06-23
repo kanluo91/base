@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BAA2B19247158C800E648FF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA2B18247158C800E648FF /* main.cpp */; };
 		4BAA2B212471591500E648FF /* SeqStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA2B1F2471591500E648FF /* SeqStack.cpp */; };
-		4BAA2B24247178D800E648FF /* LinkStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA2B22247178D800E648FF /* LinkStack.cpp */; };
+		AEB165D3248A623B006ACF95 /* LinkStack.c in Sources */ = {isa = PBXBuildFile; fileRef = AEB165D1248A623B006ACF95 /* LinkStack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,9 +29,9 @@
 		4BAA2B18247158C800E648FF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4BAA2B1F2471591500E648FF /* SeqStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SeqStack.cpp; sourceTree = "<group>"; };
 		4BAA2B202471591500E648FF /* SeqStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SeqStack.hpp; sourceTree = "<group>"; };
-		4BAA2B22247178D800E648FF /* LinkStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkStack.cpp; sourceTree = "<group>"; };
-		4BAA2B23247178D800E648FF /* LinkStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkStack.hpp; sourceTree = "<group>"; };
 		4BAA2B25247178E900E648FF /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		AEB165D1248A623B006ACF95 /* LinkStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkStack.c; sourceTree = "<group>"; };
+		AEB165D2248A623B006ACF95 /* LinkStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkStack.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +64,11 @@
 		4BAA2B17247158C800E648FF /* 05-栈 */ = {
 			isa = PBXGroup;
 			children = (
+				AEB165D1248A623B006ACF95 /* LinkStack.c */,
+				AEB165D2248A623B006ACF95 /* LinkStack.h */,
 				4BAA2B18247158C800E648FF /* main.cpp */,
 				4BAA2B202471591500E648FF /* SeqStack.hpp */,
 				4BAA2B1F2471591500E648FF /* SeqStack.cpp */,
-				4BAA2B23247178D800E648FF /* LinkStack.hpp */,
-				4BAA2B22247178D800E648FF /* LinkStack.cpp */,
 				4BAA2B25247178E900E648FF /* Common.h */,
 			);
 			path = "05-栈";
@@ -133,7 +133,7 @@
 			files = (
 				4BAA2B212471591500E648FF /* SeqStack.cpp in Sources */,
 				4BAA2B19247158C800E648FF /* main.cpp in Sources */,
-				4BAA2B24247178D800E648FF /* LinkStack.cpp in Sources */,
+				AEB165D3248A623B006ACF95 /* LinkStack.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +252,11 @@
 		4BAA2B1D247158C800E648FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 573HY9F79B;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};

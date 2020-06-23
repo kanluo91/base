@@ -10,6 +10,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "LinkStack.h"
+
+
+#define MY_TRUE 1
+#define MY_FALSE 0
 
 typedef struct BINARYNODE{
     char data;
@@ -18,8 +23,9 @@ typedef struct BINARYNODE{
 }BinaryNode;
 
 typedef struct TrackBinaryStackNode{
+    LinkNode *node; // linkstack 用
     int flag;
-    BinaryNode *node;
+    BinaryNode *root;
 } TrackStackNode;
 
 
@@ -29,14 +35,44 @@ typedef struct TrackBinaryStackNode{
 /// @param flag 标识
 TrackStackNode* MakeTrackStackNode(BinaryNode *node,int flag){
     TrackStackNode *tackNode = malloc(sizeof(TrackStackNode));
-    tackNode->node =  node;
+    tackNode->root =  node;
     tackNode->flag = flag;
     return tackNode;
 }
 
-void NonRecursion(BinaryNode *node){
+void NonRecursion(BinaryNode *root){
     
+    if(root == NULL) return;
     
+    LinkStack *stack = Init_LinkStack();
+    
+    Push_LinkStack(stack, (LinkNode *)MakeTrackStackNode(root, MY_FALSE));
+    
+    while (Size_LinkStack(stack)>0) {
+     
+        TrackStackNode *tack = (TrackStackNode *)Top_LinkStack(stack);
+        Pop_LinkStack(stack);
+        if(tack == NULL || tack->root == NULL){
+            continue;
+        }
+        
+        // 3.根
+        if(tack->flag == MY_TRUE){
+            printf("%c",tack->root->data);
+        }else{
+            // 1 右
+            Push_LinkStack(stack, (LinkNode *)MakeTrackStackNode(tack->root->rightChild, MY_FALSE));
+            
+            // 2 左
+            Push_LinkStack(stack, (LinkNode *)MakeTrackStackNode(tack->root->leftChild, MY_FALSE));
+            
+            tack->flag = MY_TRUE;
+            Push_LinkStack(stack, (LinkNode *)tack);
+        }
+    
+    }
+    
+    printf("\n");
 }
 
 void CreateBinaryTree(){
@@ -61,10 +97,14 @@ void CreateBinaryTree(){
     node6.rightChild = &node7;
     node7.leftChild = &node8;
     
+    
+    NonRecursion(&node1);
+    
 }
 
 int main(int argc, const char * argv[]) {
 
+    CreateBinaryTree();
     
     
     return 0;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEB165D0248A5677006ACF95 /* LinkStack.c in Sources */ = {isa = PBXBuildFile; fileRef = AEB165CE248A5677006ACF95 /* LinkStack.c */; };
 		AEC3DD242488D08B00E5E17A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC3DD232488D08B00E5E17A /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AEB165CE248A5677006ACF95 /* LinkStack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = LinkStack.c; path = "../../05-栈/05-栈/LinkStack.c"; sourceTree = "<group>"; };
+		AEB165CF248A5677006ACF95 /* LinkStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkStack.h; path = "../../05-栈/05-栈/LinkStack.h"; sourceTree = "<group>"; };
 		AEC3DD202488D08B00E5E17A /* 11-二叉树的非递归遍历 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "11-二叉树的非递归遍历"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC3DD232488D08B00E5E17A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +60,8 @@
 		AEC3DD222488D08B00E5E17A /* 11-二叉树的非递归遍历 */ = {
 			isa = PBXGroup;
 			children = (
+				AEB165CE248A5677006ACF95 /* LinkStack.c */,
+				AEB165CF248A5677006ACF95 /* LinkStack.h */,
 				AEC3DD232488D08B00E5E17A /* main.m */,
 			);
 			path = "11-二叉树的非递归遍历";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB165D0248A5677006ACF95 /* LinkStack.c in Sources */,
 				AEC3DD242488D08B00E5E17A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,20 +244,22 @@
 		AEC3DD282488D08B00E5E17A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 573HY9F79B;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		AEC3DD292488D08B00E5E17A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 573HY9F79B;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

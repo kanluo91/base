@@ -27,9 +27,10 @@ long getSysTime(){
     return tb.time*1000 + tb.millitm;
 }
 
-
+#pragma mark -
+#pragma mark 版本1： 自己写的最原始的
 void BubbleSort(int *arr,int length){
-    long start = getSysTime();
+    
     for (int i = 0; i<length;i++) {
         for(int j = i+1;j<length;j++){
             if(arr[i]>arr[j]){
@@ -37,12 +38,62 @@ void BubbleSort(int *arr,int length){
             }
         }
     }
-    long end = getSysTime();
-    
-    long timegap  = end - start;
-    
-    printf("耗时: %ld\n",timegap);
 }
+
+
+#pragma mark -
+#pragma mark 版本2 MJ
+void BubbleSort1(int *array,int len){
+    for (int end = len-1; end>0; end--) {
+        for (int begin = 1; begin<=end; begin++) {
+            if(array[begin] < array[begin-1]){
+                int temp = array[begin];
+                array[begin] = array[begin-1];
+                array[begin-1] = temp;
+            }
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark 版本3 MJ
+void BubbleSort2(int *array,int len){
+    for (int end = len-1; end>0; end--) {
+        
+        int sortFinish = 1;   // 步骤1
+        
+        for (int begin = 1; begin<=end; begin++) {
+            if(array[begin] < array[begin-1]){
+                int temp = array[begin];
+                array[begin] = array[begin-1];
+                array[begin-1] = temp;
+                sortFinish = -1;  // 步骤2
+            }
+        }
+        if(sortFinish == 1) break; // 步骤3
+    }
+}
+
+#pragma mark -
+#pragma mark 版本4 MJ
+void BubbleSort3(int *array,int len){
+    for (int end = len-1; end>0; end--) {
+        
+        int sortFinishIndex = end;   // 步骤1
+        
+        for (int begin = 1; begin<=end; begin++) {
+            if(array[begin] < array[begin-1]){
+                int temp = array[begin];
+                array[begin] = array[begin-1];
+                array[begin-1] = temp;
+                sortFinishIndex = begin;  // 步骤2
+            }
+        }
+        end = sortFinishIndex; // 步骤三
+    }
+}
+
+
 
 void printArray(int *arr,int len){
     
@@ -60,10 +111,18 @@ int main(int argc, const char * argv[]) {
     for(int i = 0;i<MaxCount;i++){
         arr[i] = rand()%MaxCount;
     }
+    long start = getSysTime();
+//    BubbleSort(arr, MaxCount);
+//    BubbleSort1(arr, MaxCount);
+//    BubbleSort2(arr, MaxCount);
+    BubbleSort3(arr, MaxCount);
     
+    long end = getSysTime();
+    long timegap  = end - start;
     
-    BubbleSort(arr, MaxCount);
-    printArray(arr, MaxCount);
+    printf("耗时: %ld\n",timegap);
+    
+//    printArray(arr, MaxCount);
     
 
     return 0;
