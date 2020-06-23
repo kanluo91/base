@@ -18,6 +18,7 @@ void LogArray(int *array,int len){
 }
 
 // 算法复杂度 O（n^2）
+// 交换的方法
 void InsertionSort(int *array,int len){
     for (int begin = 1; begin<len; begin++) {
         int cmpIndex = begin;
@@ -31,15 +32,31 @@ void InsertionSort(int *array,int len){
 }
 
 
+// 挪动的方法
+void InsertionSort1(int *array,int len){
+
+    for (int begin = 1; begin<len; begin++) {
+        
+        int cmpIndex = begin;
+        int cmpValue = array[cmpIndex];
+        while (cmpIndex > 0 && array[cmpIndex-1] > cmpValue) {
+            array[cmpIndex] = array[cmpIndex-1];
+            cmpIndex--;
+        }
+        array[cmpIndex] = cmpValue;
+    }
+}
+
 int main(int argc, const char * argv[]) {
  
     int arr[MaxCount];
     srand((unsigned int)time(NULL));
     for(int i = 0;i<MaxCount;i++){
-        arr[i] = rand()%MaxCount;
+        arr[i] = rand()%(MaxCount*10);
     }
     
-    InsertionSort(arr, MaxCount);
+//    InsertionSort(arr, MaxCount);
+    InsertionSort1(arr, MaxCount);
     
     LogArray(arr, MaxCount);
     
