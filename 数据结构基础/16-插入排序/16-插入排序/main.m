@@ -65,6 +65,18 @@ int BinarySearch(int *array,int start,int end,int value){
     }
 }
 
+
+/*
+1 2 4 8 11 22 23 25 28     9
+
+1 2 (4) 8 11
+
+8     [3,4)
+      (3+4)/2 = 3; beign = 3  mid = 3 end = 4
+11    [4,4)  begin = end = 4
+所以最终插入位置是 4这个位置
+*/
+
 // 找第一个大于V元素的位置
 // 小于 mid 去左边找    大于等于 mid 去右边找
 // 当beign == end 的时候 就是要找的插入位置
@@ -135,3 +147,6 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+
+
