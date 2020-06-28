@@ -6,6 +6,14 @@
 //  Copyright © 2020 金角大王. All rights reserved.
 //
 
+/*
+ *
+ * 选择排序：
+ * 每次在未排序的数组中 找到最大的数
+ * 最大的数和 最后一个数  进行交换
+ *
+ */
+
 #import <Foundation/Foundation.h>
 
 #define MaxCount  200
