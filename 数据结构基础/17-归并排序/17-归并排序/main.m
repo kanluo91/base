@@ -4,7 +4,7 @@
 //
 //  Created by luokan on 2020/6/24.
 //  Copyright © 2020 金角大王. All rights reserved.
-//  
+//
 //  时间复杂度O（nlogn）
 
 #import <Foundation/Foundation.h>
@@ -76,6 +76,10 @@ void MergerSort(int *array,int begin,int end){
 //        0 ~ 7
 //  0 ~ 3        3~7
 //0~1  1~3    3~5  5~7
+
+
+void TestMergerSort(int *array,)
+
 
 
 int main(int argc, const char * argv[]) {
