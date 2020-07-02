@@ -65,22 +65,19 @@
 
 
 #pragma mark -
-#pragma mark 读
+#pragma mark 读写锁2 -  pthread_rwlock
 -(void)read02{
-    pthread_rwlock_rdlock(&_lock);
-    sleep(1);
-    NSLog(@"读者借书: %d\n",self.books);
+    pthread_rwlock_rdlock(&_lock);  // 读加锁
+    NSLog(@"读: %d\n",self.books);
     pthread_rwlock_unlock(&_lock);
 }
 
-#pragma mark -
-#pragma mark 写
 -(void) write02{
     
-    pthread_rwlock_wrlock(&_lock);
-    sleep(1);
+    pthread_rwlock_wrlock(&_lock); // 写加锁
+    sleep(2);
     self.books++;
-    NSLog(@"作者写书: %d\n",self.books);
+    NSLog(@"写: %d\n",self.books);
     pthread_rwlock_unlock(&_lock);
 }
 
@@ -92,11 +89,17 @@
         }];
      }
     
-    for (int i = 0; i<10; i++) {
+    for (int i = 0; i<20; i++) {
         [NSThread detachNewThreadWithBlock:^{
                [self read02];
            }];
     }
+}
+
+-(void)dealloc{
+    
+    // 释放锁
+    pthread_rwlock_destroy(&_lock);
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
