@@ -29,7 +29,6 @@ typedef struct TrackBinaryStackNode{
 } TrackStackNode;
 
 
-
 /// 创建栈中的结点
 /// @param node 结点
 /// @param flag 标识
@@ -40,6 +39,8 @@ TrackStackNode* MakeTrackStackNode(BinaryNode *node,int flag){
     return tackNode;
 }
 
+#pragma mark -
+#pragma mark 非递归遍历
 void NonRecursion(BinaryNode *root){
     
     if(root == NULL) return;
@@ -75,6 +76,8 @@ void NonRecursion(BinaryNode *root){
     printf("\n");
 }
 
+#pragma mark -
+#pragma mark 创建二叉树
 void CreateBinaryTree(){
     
     BinaryNode node1 = {'A',NULL,NULL};
