@@ -65,7 +65,7 @@ TreeNode * createTree(){
 
 #pragma mark -
 #pragma mark 先序遍历
-// A B C
+// ABCDEFGH
 void PreRescureOrder(TreeNode *root){
     
     Stack *stack = Init_Stack();
@@ -85,7 +85,7 @@ void PreRescureOrder(TreeNode *root){
             StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
             Push_Stack(stack,rightStNode);
 
-        // 左 
+        // 左
             StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
             Push_Stack(stack, leftStNode);
         
@@ -97,15 +97,78 @@ void PreRescureOrder(TreeNode *root){
     printf("\n");
 }
 
+#pragma mark -
+#pragma mark 中序遍历
+// BDCEAFHG
 void MidRescureOrder(TreeNode *root){
     
+    Stack *stack = Init_Stack();
+    StackNode *stNode = createStackNode(root,0);
+    Push_Stack(stack, stNode);
     
+    while (Top_Stack(stack)) {
+        StackNode *rootStNode = Pop_Stack(stack);
+        
+        if(rootStNode->haveEverStacked == 1){ // 输出
+            if(rootStNode->data && rootStNode->data->value){
+                printf("%c",rootStNode->data->value);
+            }
+        }else{
+            
+        // 右
+            StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
+            Push_Stack(stack,rightStNode);
+        
+        // 根
+        rootStNode->haveEverStacked = 1;
+        Push_Stack(stack, rootStNode);
+            
+            // 左
+                StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
+                Push_Stack(stack, leftStNode);
+            
+        }
+    }
+    printf("\n");
     
 }
 
+#pragma mark -
+#pragma mark 后续遍历
+// DECBHGFA
 void LastRescureOrder(TreeNode *root){
     
+    Stack *stack = Init_Stack();
+    StackNode *stNode = createStackNode(root,0);
+    Push_Stack(stack, stNode);
     
+    while (Top_Stack(stack)) {
+        StackNode *rootStNode = Pop_Stack(stack);
+        
+        if(rootStNode->haveEverStacked == 1){ // 输出
+            if(rootStNode->data && rootStNode->data->value){
+                printf("%c",rootStNode->data->value);
+            }
+        }else{
+            
+            
+            // 根
+            rootStNode->haveEverStacked = 1;
+            Push_Stack(stack, rootStNode);
+            
+        // 右
+            StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
+            Push_Stack(stack,rightStNode);
+        
+
+            
+            // 左
+                StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
+                Push_Stack(stack, leftStNode);
+            
+        }
+    }
+    printf("\n");
     
 }
 
@@ -114,6 +177,11 @@ int main(int argc, const char * argv[]) {
     TreeNode *tree = createTree();
     
     PreRescureOrder(tree);
+    
+    MidRescureOrder(tree);
+    
+    LastRescureOrder(tree);
+    
     
     return 0;
 }
