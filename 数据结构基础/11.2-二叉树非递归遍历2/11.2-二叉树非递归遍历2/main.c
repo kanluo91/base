@@ -156,12 +156,10 @@ void LastRescureOrder(TreeNode *root){
             rootStNode->haveEverStacked = 1;
             Push_Stack(stack, rootStNode);
             
-        // 右
+           // 右
             StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
             Push_Stack(stack,rightStNode);
         
-
-            
             // 左
                 StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
                 Push_Stack(stack, leftStNode);
@@ -170,6 +168,48 @@ void LastRescureOrder(TreeNode *root){
     }
     printf("\n");
     
+}
+
+
+#pragma mark -
+#pragma mark 层序遍历
+void LevelRecrsion(TreeNode *root){
+
+    Stack *stack = Init_Stack();
+    StackNode *stNode = createStackNode(root,0);
+    Push_Stack(stack, stNode);
+    
+//    while (Top_Stack(stack)) {
+        StackNode *rootStNode = Pop_Stack(stack);
+        
+        while (rootStNode) {
+            if(rootStNode->haveEverStacked == 1){ // 输出
+                if(rootStNode->data && rootStNode->data->value){
+                    printf("%c",rootStNode->data->value);
+                }
+            }
+            else{
+    
+               // 右
+                StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
+                Push_Stack(stack,rightStNode);
+            
+                // 左
+                    StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
+                    Push_Stack(stack, leftStNode);
+                
+                // 根
+                    rootStNode->haveEverStacked = 1;
+                    Push_Stack(stack, rootStNode);
+                
+            }
+            rootStNode = Pop_Stack(stack);
+        }
+
+        
+//    }
+    printf("\n");
+
 }
 
 int main(int argc, const char * argv[]) {
@@ -181,6 +221,8 @@ int main(int argc, const char * argv[]) {
     MidRescureOrder(tree);
     
     LastRescureOrder(tree);
+    
+    LevelRecrsion(tree);
     
     
     return 0;
