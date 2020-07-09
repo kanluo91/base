@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4BC8D67C24B1729C0068E854 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8D67B24B1729C0068E854 /* main.c */; };
 		4BC8D68424B172B30068E854 /* Stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 4BC8D68324B172B30068E854 /* Stack.c */; };
+		AEE9A89E24B453BE005EE893 /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE9A89D24B453BE005EE893 /* Queue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,9 @@
 		4BC8D68224B172B30068E854 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		4BC8D68324B172B30068E854 /* Stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Stack.c; sourceTree = "<group>"; };
 		4BC8D68524B173AF0068E854 /* 二叉树结构图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "二叉树结构图.jpg"; path = "../../10-树的遍历/10-树的遍历/二叉树结构图.jpg"; sourceTree = "<group>"; };
+		AEE9A89C24B453BE005EE893 /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		AEE9A89D24B453BE005EE893 /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
+		AEE9A89F24B45432005EE893 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,9 @@
 				4BC8D67B24B1729C0068E854 /* main.c */,
 				4BC8D68224B172B30068E854 /* Stack.h */,
 				4BC8D68324B172B30068E854 /* Stack.c */,
+				AEE9A89C24B453BE005EE893 /* Queue.h */,
+				AEE9A89D24B453BE005EE893 /* Queue.c */,
+				AEE9A89F24B45432005EE893 /* Common.h */,
 			);
 			path = "11.2-二叉树非递归遍历2";
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE9A89E24B453BE005EE893 /* Queue.c in Sources */,
 				4BC8D68424B172B30068E854 /* Stack.c in Sources */,
 				4BC8D67C24B1729C0068E854 /* main.c in Sources */,
 			);
@@ -246,20 +254,22 @@
 		4BC8D68024B1729C0068E854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 573HY9F79B;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		4BC8D68124B1729C0068E854 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 573HY9F79B;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

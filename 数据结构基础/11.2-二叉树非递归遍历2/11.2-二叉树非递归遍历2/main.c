@@ -8,7 +8,8 @@
 
 #include <stdio.h>
 #include "Stack.h"
-#include "Stack.h"
+#include "Queue.h"
+
 
 TreeNode * createTree(){
     TreeNode *nodeA =(TreeNode *)malloc(sizeof(TreeNode));
@@ -68,6 +69,7 @@ TreeNode * createTree(){
 // ABCDEFGH
 void PreRescureOrder(TreeNode *root){
     
+    printf("先序遍历:");
     Stack *stack = Init_Stack();
     StackNode *stNode = createStackNode(root,0);
     Push_Stack(stack, stNode);
@@ -101,7 +103,7 @@ void PreRescureOrder(TreeNode *root){
 #pragma mark 中序遍历
 // BDCEAFHG
 void MidRescureOrder(TreeNode *root){
-    
+    printf("中序遍历:");
     Stack *stack = Init_Stack();
     StackNode *stNode = createStackNode(root,0);
     Push_Stack(stack, stNode);
@@ -137,7 +139,7 @@ void MidRescureOrder(TreeNode *root){
 #pragma mark 后续遍历
 // DECBHGFA
 void LastRescureOrder(TreeNode *root){
-    
+    printf("后序遍历:");
     Stack *stack = Init_Stack();
     StackNode *stNode = createStackNode(root,0);
     Push_Stack(stack, stNode);
@@ -173,41 +175,35 @@ void LastRescureOrder(TreeNode *root){
 
 #pragma mark -
 #pragma mark 层序遍历
+/*
+ *  流程: 使用队列（先进先出）
+ *  1. 先把跟结点入队
+ *  2. 递归队列
+ *  3. 出队的加点 把他的左结点加入  再加入右结点
+ *
+ */
+
+
 void LevelRecrsion(TreeNode *root){
+    printf("层序遍历:");
 
-    Stack *stack = Init_Stack();
-    StackNode *stNode = createStackNode(root,0);
-    Push_Stack(stack, stNode);
+    Queue *q = Init_Queue();
     
-//    while (Top_Stack(stack)) {
-        StackNode *rootStNode = Pop_Stack(stack);
-        
-        while (rootStNode) {
-            if(rootStNode->haveEverStacked == 1){ // 输出
-                if(rootStNode->data && rootStNode->data->value){
-                    printf("%c",rootStNode->data->value);
-                }
-            }
-            else{
+    EnQueue(q, CreateQueueNode(root));
     
-               // 右
-                StackNode *rightStNode = createStackNode(rootStNode->data->rightChild, 0);
-                Push_Stack(stack,rightStNode);
+    while (QueueSize(q) > 0) {
+        QueueNode *node = DeQueue(q);
+         
+        if(node && node->data){
+            printf("%c",node->data->value);
             
-                // 左
-                    StackNode *leftStNode = createStackNode(rootStNode->data->leftChild, 0);
-                    Push_Stack(stack, leftStNode);
-                
-                // 根
-                    rootStNode->haveEverStacked = 1;
-                    Push_Stack(stack, rootStNode);
-                
-            }
-            rootStNode = Pop_Stack(stack);
+            EnQueue(q, CreateQueueNode(node->data->leftChild));
+            
+            EnQueue(q, CreateQueueNode(node->data->rightChild));
         }
-
-        
-//    }
+    }
+    
+    
     printf("\n");
 
 }

@@ -9,11 +9,8 @@
 #ifndef Stack_h
 #define Stack_h
 
-typedef struct TREENODE{
-    char value;
-    struct TREENODE *leftChild;
-    struct TREENODE *rightChild;
-} TreeNode;
+#include <stdio.h>
+#include "Common.h"
 
 typedef struct STACKNODE{
     int haveEverStacked; // 是否加入过队列 0 没加入过 1 加入过
@@ -25,9 +22,6 @@ typedef struct STACK{
     int size;
     StackNode *root;
 }Stack;
-
-
-#include <stdio.h>
 
 Stack* Init_Stack(void);  // 初始化栈
 
