@@ -51,7 +51,6 @@ TreeNode * createTree(){
     nodeE->leftChild = NULL;
     nodeE->rightChild = NULL;
     
-    
     nodeF->rightChild = nodeG;
     nodeF->leftChild = NULL;
     
@@ -203,9 +202,7 @@ void LevelRecrsion(TreeNode *root){
         }
     }
     
-    
     printf("\n");
-
 }
 
 int main(int argc, const char * argv[]) {
@@ -219,7 +216,6 @@ int main(int argc, const char * argv[]) {
     LastRescureOrder(tree);
     
     LevelRecrsion(tree);
-    
     
     return 0;
 }

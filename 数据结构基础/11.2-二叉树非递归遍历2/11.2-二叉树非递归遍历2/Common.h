@@ -9,7 +9,6 @@
 #ifndef Common_h
 #define Common_h
 
-
 typedef struct TREENODE{
     char value;
     struct TREENODE *leftChild;
