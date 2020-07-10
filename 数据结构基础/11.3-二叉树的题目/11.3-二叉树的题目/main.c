@@ -226,6 +226,26 @@ void LevelTravelTree(TreeNode *root){
 }
 
 
+/// 根据遍历结果  重构二叉树
+
+//  以下的情况之一可以保证一颗唯一的二叉树
+//  1. 前序遍历 +  中序遍历
+//  2. 后续遍历 +  中序遍历
+
+
+
+// 练习：
+// 前序遍历：  4 2 1 3 6 5 
+// 中序遍历：  1 2 3 4 5 6
+void RebuildTree(){
+    
+    
+    
+    
+    
+}
+
+
 int main(int argc, const char * argv[]) {
 
     TreeNode *tree = createTree();
