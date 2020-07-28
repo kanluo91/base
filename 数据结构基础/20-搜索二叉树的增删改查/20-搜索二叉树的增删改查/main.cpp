@@ -95,9 +95,22 @@ bool DeleteBST(BiTree tree,ElemType e){
             p = NULL;
         }else if(p->lChild && p->rChild == NULL){  // 只有左结点
             
+            BINode *lChild = p->lChild;
+            p = p->lChild;
+            free(lChild);
+            lChild = NULL;
+            
         }else if(p->lChild == NULL && p->rChild){ // 只有右结点
             
+            BINode *rChild = p->rChild;
+            p = p->rChild;
+            free(rChild);
+            rChild = NULL;
+            
         }else{ //双亲结点都有
+            
+            
+            
             
         }
     }
