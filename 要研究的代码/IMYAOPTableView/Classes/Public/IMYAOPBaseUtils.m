@@ -95,14 +95,27 @@ static NSString *const kAOPFeedsViewPrefix = @"kIMYAOP_";
 #pragma mark - 注入 aop class
 
 - (void)injectFeedsView:(UIView *)feedsView {
+    
+    NSLog(@"---------修改代理之前---------------\n");
+    NSLog(@"self.tableView.delegate : %@\n",((UITableView *)feedsView).delegate);
+    NSLog(@"self.tableView.dataSource : %@\n",((UITableView *)feedsView).dataSource);
+    /*
+     * 母的：修改代理指向
+     * 以前指向：       WBStatusTimelineViewController
+     * 修改之后指向：    IMYAOPTableViewUtils
+     */
     struct objc_super objcSuper = {.super_class = [self msgSendSuperClass], .receiver = feedsView};
     ((void (*)(void *, SEL, id))(void *)objc_msgSendSuper)(&objcSuper, @selector(setDelegate:), self);
     ((void (*)(void *, SEL, id))(void *)objc_msgSendSuper)(&objcSuper, @selector(setDataSource:), self);
+    
+    NSLog(@"---------修改代理之后---------------\n");
+    NSLog(@"self.tableView.delegate : %@\n",((UITableView *)feedsView).delegate);
+    NSLog(@"self.tableView.dataSource : %@\n",((UITableView *)feedsView).dataSource);
 
-    self.origViewClass = [feedsView class];
-    Class aopClass = [self makeSubclassWithClass:self.origViewClass];
+    self.origViewClass = [feedsView class];                            // TableView 的类对象 YYTableView
+    Class aopClass = [self makeSubclassWithClass:self.origViewClass];  // 生成子类 kIMYAOP_YYTableView 类对象
     if (![self.origViewClass isSubclassOfClass:aopClass]) {
-        [self bindingFeedsView:feedsView aopClass:aopClass];
+        [self bindingFeedsView:feedsView aopClass:aopClass];           // TableView 的类对象指向 kIMYAOP_YYTableView
     }
 }
 

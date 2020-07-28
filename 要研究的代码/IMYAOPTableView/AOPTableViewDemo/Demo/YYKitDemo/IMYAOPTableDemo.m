@@ -12,6 +12,12 @@
 
 @end
 @implementation IMYAOPTableDemo
+
+-(void)dealloc{
+    
+    NSLog(@"IMYAOPTableDemo Dealloc \n");
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     ///只是为了不警告  该回调是不会被调用的
     return 0;
@@ -24,8 +30,18 @@
     [self.aopUtils.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"AD"];
 
     ///广告回调，跟TableView的Delegate，DataSource 一样。
+    
+    NSLog(@"----------设置代理之前-------------------\n");
+    
+    NSLog(@"代理 = %@\n",self.aopUtils.tableView.delegate);  // WBStatusTimelineViewController
+    
+    
     self.aopUtils.delegate = self;
     self.aopUtils.dataSource = self;
+    
+    NSLog(@"----------设置代理之后-------------------\n");
+    
+    NSLog(@"代理 = %@\n",self.aopUtils.tableView.delegate); // WBStatusTimelineViewController
 
     dispatch_async(dispatch_get_main_queue(), ^{
         [self insertRows];
