@@ -27,11 +27,11 @@ typedef struct BINode{
 /// 搜索二叉树元素
 /// @param tree 二叉树
 /// @param e 元素
-bool SearchBST(BiTree tree, ElemType e,BINode *findE){
+bool SearchBST(BiTree tree, ElemType e,BINode **findE){
     if(tree  == NULL)  return false;
     
     if(e == tree->data){
-        findE = tree;
+        *findE = tree;
         return true;
     }else if(e > tree->data){
         return SearchBST(tree->rChild, e, findE);
@@ -46,7 +46,7 @@ bool SearchBST(BiTree tree, ElemType e,BINode *findE){
 bool InsertBST(BiTree &T,ElemType e){
     
     BINode *p = NULL;
-    if(SearchBST(T, e, p) == false){
+    if(SearchBST(T, e, &p) == false){
         
         // 创建结点
         BINode *node = (BINode *)malloc(sizeof(BINode));
@@ -89,29 +89,30 @@ bool DeleteBST(BiTree tree,ElemType e){
     if(tree == NULL) return false;
     
     BINode *p = NULL;
-    if(SearchBST(tree, e, p) == true){ // 找到了结点
+    if(SearchBST(tree, e, &p) == true){ // 找到了结点
         if(p->lChild == NULL  && p->rChild == NULL){  // 叶子结点
             free(p);
             p = NULL;
+            return true;
         }else if(p->lChild && p->rChild == NULL){  // 只有左结点
             
             BINode *lChild = p->lChild;
             p = p->lChild;
             free(lChild);
             lChild = NULL;
-            
+             return true;
         }else if(p->lChild == NULL && p->rChild){ // 只有右结点
             
             BINode *rChild = p->rChild;
             p = p->rChild;
             free(rChild);
             rChild = NULL;
-            
-        }else{ //双亲结点都有
-            
-            
+            return true;
+        }else{ //双亲结点都有（把直接前驱结点挪上去）
             
             
+            
+            return true;
         }
     }
     return false;
@@ -127,6 +128,8 @@ int main(int argc, const char * argv[]) {
     for(int i = 0;i<CTS;i++){
         InsertBST(tree, a[i]);
     }
+    
+    DeleteBST(tree, 99);
     
     
     printf("中序输出搜索二叉树:\n");
