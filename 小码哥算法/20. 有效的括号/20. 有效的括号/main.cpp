@@ -12,20 +12,68 @@
 
 using namespace std;
 
+//  特别注意
+//  st.empty() 时  st.top()  返回一个栈顶元素的引用，类型为 T&。如果栈为空，程序会报错。
+
+
+//'('，')'，'{'，'}'，'['，']'
 class Solution {
 public:
     bool isValid(string s) {
         
         stack<char> st;
-        
-
-        
-        return false;
+        for (int i = 0; i<s.length(); i++) {
+            char letter = s[i];
+            
+            switch (letter) {
+                case '(':
+                    st.push(s[i]);
+                    break;
+                case '{':
+                    st.push(s[i]);
+                    break;
+                case '[':
+                    st.push(s[i]);
+                    break;
+                    
+                case ')':
+                    if(!st.empty()&&st.top() == '('){
+                        st.pop();
+                    }else{
+                        st.push(s[i]);
+                    }
+                    break;
+                case '}':
+                    if(!st.empty()&&st.top() == '{'){
+                         st.pop();
+                     }else{
+                         st.push(s[i]);
+                     }
+                    break;
+                case ']':
+                    if(!st.empty()&&st.top() == '['){
+                         st.pop();
+                     }else{
+                         st.push(s[i]);
+                     }
+                    break;
+                default:
+                    break;
+            }
+            
+            
+        }
+        return st.empty();
     }
 };
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Solution st;
+    bool isV = st.isValid("]");
+    printf("%s\n",isV?"YES":"NO");
+    
     return 0;
 }
+
