@@ -32,9 +32,22 @@ public:
     
     // 中序 - 非递归
     void traversal2(TreeNode *root,vector<int> &vt){
+        stack<TreeNode *> st;
+        TreeNode *p = root;
         
-        
-        
+        while (!st.empty() || p) {
+            
+            if(p){
+                st.push(p);
+                p = p->left;
+            }else{
+                
+                p = st.top();
+                vt.push_back(p->val);
+                st.pop();
+                p = p->right;
+            }
+        }
     }
     
     vector<int> inorderTraversal(TreeNode* root) {

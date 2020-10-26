@@ -80,9 +80,9 @@ TreeNode* Top(){
 }
 
 /*
- * 先序
+ * 先序(根-左-右)
  */
-void PreOrderTraversal(Tree T,vector<int> &vt){
+void PreOrderTraversal(Tree T){
 
     TreeNode *p;
     Push(T);
@@ -92,14 +92,46 @@ void PreOrderTraversal(Tree T,vector<int> &vt){
         Pop();
         
         while (p) {
-            printf("_%d",p->value);
-            vt.push_back(p->value);
+//            printf("_%d",p->value);
+            
+            TreeNode *temp = p->left;
+            p->left = p->right;
+            p->right = temp;
+            
             if(p->right){
-                Push(p->right);
+                Push(p->right);      // 右进栈
             }
-            p = p->left;
+            p = p->left;             // 指向左
         }
     }
+}
+
+/*
+ * 中序遍历：（左-根-右）
+ *
+ */
+void MidOrderTraversal(Tree T){
+    
+    TreeNode *p = T;
+    
+    while (p || top != -1) {
+        
+        if(p){
+            Push(p);
+            p = p->left;
+        }else{ // P 不存在的情况
+            p = Top();
+            printf("%d_",p->value);
+            Pop();
+            p = p->right;
+        }
+    }
+}
+
+
+void LastOrderTraversal(Tree T){
+    
+    
     
     
 }
@@ -109,8 +141,8 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     Tree t;
     InitTree(t);
-    vector<int> vt;
-    PreOrderTraversal(t,vt);
+//    PreOrderTraversal(t);
+    MidOrderTraversal(t);
     printf("\n");
     return 0;
 }
