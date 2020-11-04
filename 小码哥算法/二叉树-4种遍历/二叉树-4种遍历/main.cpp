@@ -17,7 +17,7 @@ typedef struct TREENODE{
 }TreeNode,*Tree;
 
 
-TreeNode* LinkStack[20];
+TreeNode* LinkStack[100];
 int top = -1;
 
 void InitTree(Tree &T){
@@ -66,7 +66,7 @@ void InitTree(Tree &T){
 }
 
 void Push(TreeNode *node){
-    LinkStack[++top] = node;
+        LinkStack[++top] = node;
 }
 
 void Pop(){
@@ -83,27 +83,23 @@ TreeNode* Top(){
  * 先序(根-左-右)
  */
 void PreOrderTraversal(Tree T){
-
-    TreeNode *p;
-    Push(T);
-    while (Top() != NULL) {
-        
+    
+    struct TREENODE * p = T;
+    Push(p);
+    
+    while(Top()){
         p = Top();
+        printf("%d,",p->value);
         Pop();
+        if(p->right){
+            Push(p->right);
+        }
         
-        while (p) {
-//            printf("_%d",p->value);
-            
-            TreeNode *temp = p->left;
-            p->left = p->right;
-            p->right = temp;
-            
-            if(p->right){
-                Push(p->right);      // 右进栈
-            }
-            p = p->left;             // 指向左
+        if(p->left){
+            Push(p->left);
         }
     }
+
 }
 
 /*
@@ -111,38 +107,63 @@ void PreOrderTraversal(Tree T){
  *
  */
 void MidOrderTraversal(Tree T){
-    
-    TreeNode *p = T;
-    
-    while (p || top != -1) {
-        
+    struct TREENODE *p =T;
+    while (p || Top()) {
         if(p){
             Push(p);
             p = p->left;
-        }else{ // P 不存在的情况
+        }else{
             p = Top();
-            printf("%d_",p->value);
+            printf("%d,",p->value);
             Pop();
             p = p->right;
         }
     }
 }
 
-
 void LastOrderTraversal(Tree T){
-    
     
     
     
 }
 
 
+/// 层序遍历
+/// @param T 根结点
+void LevelOrderTraversal(Tree T){
+    
+    Tree Array[100];
+    int front = 0;
+    int rear = 0;
+    // 队空： rear == front
+    // 队满： (rear+1)%MaxSize == front
+    
+    Array[front++] = T;
+    
+    int level = 0;
+    
+    while(rear != front){
+        Tree top = Array[rear];
+        printf("%d,",top->value);
+        // 出队列
+        rear = (rear+1)%100;
+        if(top->left){
+            Array[front++] = top->left;
+        }
+        if(top->right){
+            Array[front++] = top->right;
+        }
+    }
+    printf("\n层级:%d\n",level);
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     Tree t;
     InitTree(t);
 //    PreOrderTraversal(t);
-    MidOrderTraversal(t);
+//    MidOrderTraversal(t);
+    LevelOrderTraversal(t);
     printf("\n");
     return 0;
 }
