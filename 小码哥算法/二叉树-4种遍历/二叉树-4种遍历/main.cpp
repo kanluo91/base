@@ -138,20 +138,21 @@ void LevelOrderTraversal(Tree T){
     // 队空： rear == front
     // 队满： (rear+1)%MaxSize == front
     
-    Array[front++] = T;
+    Array[rear++] = T;
     
     int level = 0;
     
     while(rear != front){
-        Tree top = Array[rear];
+        Tree top = Array[front];
         printf("%d,",top->value);
         // 出队列
-        rear = (rear+1)%100;
+        front = (front+1)%100;
+    
         if(top->left){
-            Array[front++] = top->left;
+            Array[rear++] = top->left;
         }
         if(top->right){
-            Array[front++] = top->right;
+            Array[rear++] = top->right;
         }
     }
     printf("\n层级:%d\n",level);
