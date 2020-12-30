@@ -96,7 +96,7 @@ int main(int argc, const char * argv[]) {
     
     int last = FindAndKill(l, from, gap);
 
-    cout<<"胜利者"<< last << endl;
+    cout<<"最后的胜利者:"<< last << endl;
     
     return 0;
 }
