@@ -14,6 +14,10 @@ void swap(int *a,int *b){
     *b = tmp;
 }
 
+bool Cmp(int a,int b){
+    return a>b?true:false;
+}
+
 #pragma mark -
 #pragma mark 1.冒泡排序
 // 小->大(每次找最大)
@@ -84,6 +88,54 @@ void SelectSort(int *arr,int len){
     }
 }
 
+#pragma mark -
+#pragma mark 3. 插入排序
+void InsertSort(int *arr,int len){
+    
+    // 交换元素的方法
+    for (int begin = 1; begin<len; begin++) {
+        int boundsIndex = begin;
+        while (boundsIndex>0 && Cmp(arr[boundsIndex], arr[boundsIndex-1])==false) {
+            swap(arr[boundsIndex], arr[boundsIndex-1]);
+            boundsIndex--;
+        }
+    }
+    
+    // 优化-找到插入位置，挪动其他元素
+//    for (int begin=1; begin<len; begin++) {
+//
+//    }
+    
+}
+
+#pragma mark -
+#pragma mark 4. 二分搜索
+// 这个算法是有弊端的：如果数组中有多个重复的元素，会返回哪个index呢？
+int IndexOfValue(int *arr,int len,int value){
+    int begin = 0;
+    int end = len;
+    while (begin<value) {
+        int mid = (begin+end)/2;
+        if(value > arr[mid]){
+            begin = mid+1;
+        }else if(value<arr[mid]){
+            end = mid;
+        }else{
+            return mid;
+        }
+    }
+    return -1;
+}
+
+/// 在数组中找到合适的插入位置
+/// @param array 数组
+/// @param len 数组长度
+/// @param value 插入的值
+int findInsertIndex(int *array,int len,int value){
+    
+    
+}
+
 void displayArray(int *array,int len){
     for (int i = 0; i<len; i++) {
         cout << array[i] << "_";
@@ -94,7 +146,11 @@ void displayArray(int *array,int len){
 int main(int argc, const char * argv[]) {
     int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
 //    BubbleSort(array, 11);
-    SelectSort(array, 11);
+//    SelectSort(array, 11);
+    InsertSort(array, 11);
     displayArray(array, 11);
+    int index = IndexOfValue(array
+                             , 11, 8);
+    cout<< "8在的位置是"<<index<<endl;
     return 0;
 }
