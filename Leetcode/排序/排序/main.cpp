@@ -14,6 +14,8 @@ void swap(int *a,int *b){
     *b = tmp;
 }
 
+#pragma mark -
+#pragma mark 1.冒泡排序
 // 小->大(每次找最大)
 // 外循环的i 代表要重复多少次找最大值
 // 在内循环中i代表已经有i个数已经找到， len-i-2 代表内循环执行的次数
@@ -68,6 +70,20 @@ void BubbleSort(int *array,int len){
     }
 }
 
+#pragma mark -
+#pragma mark 2.选择排序
+void SelectSort(int *arr,int len){
+    for (int end = len-1;end>0; end--) {
+        int maxIdx = 0;
+        for (int begin = 0; begin<=end; begin++) {
+            if(arr[maxIdx] < arr[begin]){
+                maxIdx = begin;
+            }
+        }
+        swap(arr[maxIdx], arr[end]);
+    }
+}
+
 void displayArray(int *array,int len){
     for (int i = 0; i<len; i++) {
         cout << array[i] << "_";
@@ -77,7 +93,8 @@ void displayArray(int *array,int len){
 
 int main(int argc, const char * argv[]) {
     int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
-    BubbleSort(array, 11);
+//    BubbleSort(array, 11);
+    SelectSort(array, 11);
     displayArray(array, 11);
     return 0;
 }
