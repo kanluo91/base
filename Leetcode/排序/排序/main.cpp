@@ -8,6 +8,8 @@
 #include <iostream>
 using namespace std;
 
+#pragma mark -
+#pragma mark 辅助函数
 void swap(int *a,int *b){
     int tmp = *a;
     *a = *b;
@@ -16,6 +18,13 @@ void swap(int *a,int *b){
 
 bool Cmp(int a,int b){
     return a>b?true:false;
+}
+
+void displayArray(int *array,int len){
+    for (int i = 0; i<len; i++) {
+        cout << array[i] << "_";
+    }
+    cout<<endl;
 }
 
 #pragma mark -
@@ -92,19 +101,40 @@ void SelectSort(int *arr,int len){
 #pragma mark 3. 插入排序
 void InsertSort(int *arr,int len){
     
-    // 交换元素的方法
-    for (int begin = 1; begin<len; begin++) {
-        int boundsIndex = begin;
-        while (boundsIndex>0 && Cmp(arr[boundsIndex], arr[boundsIndex-1])==false) {
-            swap(arr[boundsIndex], arr[boundsIndex-1]);
-            boundsIndex--;
-        }
-    }
-    
-    // 优化-找到插入位置，挪动其他元素
-//    for (int begin=1; begin<len; begin++) {
-//
+    // 1. 交换元素的方法
+//    for (int begin = 1; begin<len; begin++) {
+//        int boundsIndex = begin;
+//        while (boundsIndex>0 && Cmp(arr[boundsIndex], arr[boundsIndex-1])==false) {
+//            swap(arr[boundsIndex], arr[boundsIndex-1]);
+//            boundsIndex--;
+//        }
 //    }
+    
+    // 2. 优化-找到插入位置，挪动其他元素
+    for (int begin=1; begin<len; begin++) {
+
+        int fstart = 0;
+        int fend = begin;
+        int fvalue = arr[begin];
+        // 找插入位置
+        while (fstart<fend) {
+            int fmid = (fstart+fend)/2;
+            if(fvalue >= arr[fmid]){
+                fstart = fmid+1;
+            }else{
+                fend = fmid;
+            }
+        }
+        int fmove = begin;
+        // 挪元素
+        while (fmove>=fstart) {
+            arr[fmove] = arr[fmove-1];
+            fmove--;
+        }
+        
+        // 赋值
+        arr[fstart] = fvalue;
+    }
     
 }
 
@@ -132,15 +162,25 @@ int IndexOfValue(int *arr,int len,int value){
 /// @param len 数组长度
 /// @param value 插入的值
 int findInsertIndex(int *array,int len,int value){
-    
-    
+    int begin  = 0;
+    int end = len;
+    while (begin < end) {
+        int mid = (begin+end)/2;
+        if(value >= array[mid]){
+            begin = mid+1;
+        }else if(value < array[mid]){
+            end = mid;
+        }
+    }
+    return begin;
 }
 
-void displayArray(int *array,int len){
-    for (int i = 0; i<len; i++) {
-        cout << array[i] << "_";
-    }
-    cout<<endl;
+void TestFindInsertIndex(){
+    int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
+    InsertSort(array, 11);
+    displayArray(array, 11);
+    int indx = findInsertIndex(array, 11, 10);
+    cout<<"找到插入位置"<<indx<<endl;
 }
 
 int main(int argc, const char * argv[]) {
@@ -149,8 +189,7 @@ int main(int argc, const char * argv[]) {
 //    SelectSort(array, 11);
     InsertSort(array, 11);
     displayArray(array, 11);
-    int index = IndexOfValue(array
-                             , 11, 8);
-    cout<< "8在的位置是"<<index<<endl;
+    
+//    TestFindInsertIndex();
     return 0;
 }
