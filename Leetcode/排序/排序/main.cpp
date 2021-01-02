@@ -183,13 +183,64 @@ void TestFindInsertIndex(){
     cout<<"找到插入位置"<<indx<<endl;
 }
 
+#pragma mark -
+#pragma mark 5.归并排序
+void MergerArray(int *arr,int begin,int mid,int end,int *copyArray){
+    // 1. 先对[beigin,mid) 的元素进行备份
+    int leftStart = 0;
+    int leftEnd = mid-begin;
+    while (leftStart<leftEnd) {
+        copyArray[leftStart] = arr[begin+leftStart];
+        leftStart++;
+    }
+    leftStart = 0;
+    int rightStart = mid;
+    int rightEnd = end;
+    int arrIndex = begin;
+    // 2. copyArray 和 arr[mid,end) 进行合并
+    while (leftStart<leftEnd) {
+        int leftValue = copyArray[leftStart];
+        int rightValue = arr[rightStart];
+        // 如果右边先结束,一直读左边的数
+        if(rightStart>=rightEnd){
+            arr[arrIndex++] = leftValue;
+            leftStart++;
+        }else{
+            // 左边也没结束  右边也没结束
+            if(leftValue<=rightValue){
+                arr[arrIndex++] = leftValue;
+                leftStart++;
+            }else{
+                arr[arrIndex++] = rightValue;
+                rightStart++;
+            }
+        }
+    }
+}
+
+/*
+ * 对[begin,end)  进行递归归并 [begin,mid)  [mid,end)
+ *
+ */
+void MergerSort(int *arr,int begin,int end,int* copyArray){
+    if(end-begin <= 1) return;
+    int mid = (begin+end)/2;
+    MergerSort(arr, begin, mid,copyArray);
+    MergerSort(arr, mid, end,copyArray);
+    MergerArray(arr, begin, mid, end,copyArray);
+}
+
 int main(int argc, const char * argv[]) {
     int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
+    int copyArray[6];
 //    BubbleSort(array, 11);
 //    SelectSort(array, 11);
-    InsertSort(array, 11);
-    displayArray(array, 11);
+//    InsertSort(array, 11);
+    
+    MergerSort(array, 0, 11, copyArray);
     
 //    TestFindInsertIndex();
+    
+    displayArray(array, 11);
     return 0;
 }
