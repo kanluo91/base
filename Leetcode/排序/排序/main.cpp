@@ -185,7 +185,7 @@ void TestFindInsertIndex(){
 
 #pragma mark -
 #pragma mark 5.归并排序
-void MergerArray(int *arr,int begin,int mid,int end,int *copyArray){
+void MergeArray(int *arr,int begin,int mid,int end,int *copyArray){
     // 1. 先对[beigin,mid) 的元素进行备份
     int leftStart = 0;
     int leftEnd = mid-begin;
@@ -222,24 +222,75 @@ void MergerArray(int *arr,int begin,int mid,int end,int *copyArray){
  * 对[begin,end)  进行递归归并 [begin,mid)  [mid,end)
  *
  */
-void MergerSort(int *arr,int begin,int end,int* copyArray){
+void MergeSort(int *arr,int begin,int end,int* copyArray){
     if(end-begin <= 1) return;
     int mid = (begin+end)/2;
-    MergerSort(arr, begin, mid,copyArray);
-    MergerSort(arr, mid, end,copyArray);
-    MergerArray(arr, begin, mid, end,copyArray);
+    MergeSort(arr, begin, mid,copyArray);
+    MergeSort(arr, mid, end,copyArray);
+    MergeArray(arr, begin, mid, end,copyArray);
+}
+
+#pragma mark -
+#pragma mark 6. 快速排序
+int PiovtIndex(int *arr,int begin,int end){
+    int mid = (begin+end)/2;
+    int piovtValue = arr[mid];
+    
+    swap(arr[begin], arr[mid]);
+    // 原理还是用beigin 去换  但是先把mid 和 begin 进行置换
+    
+    end--;
+    bool rightTravel = true;
+    while (begin<end) {
+        if(rightTravel){
+
+            if(arr[end] > piovtValue){
+                end--;
+                rightTravel = true;
+            }else{
+                arr[begin++] = arr[end];
+                rightTravel = false; // 方向反转
+            }
+            
+        }else{
+            if(arr[begin] < piovtValue){
+                begin++;
+                rightTravel = false;
+            }else{
+                arr[end--] = arr[begin];
+                rightTravel = true; //方向反转
+            }
+        }
+    }
+    arr[begin] = piovtValue;
+    return begin;
+}
+
+
+/*
+ *  注意： 排序分了三个部分
+ *  [begin,piovIndex)
+ *  piovIndex
+ *  [piovIndex+1,end)
+ */
+void QuickSort(int *array,int begin,int end){
+    if(end-begin <= 1) return;
+    int piovtidx = PiovtIndex(array, begin, end);
+    QuickSort(array, begin, piovtidx);
+    QuickSort(array, piovtidx+1, end);
 }
 
 int main(int argc, const char * argv[]) {
     int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
-    int copyArray[6];
-//    BubbleSort(array, 11);
-//    SelectSort(array, 11);
-//    InsertSort(array, 11);
+    int copyArray[5];
+//   BubbleSort(array, 11);
+//   SelectSort(array, 11);
+//   InsertSort(array, 11);
+//   MergeSort(array, 0, 11, copyArray);
     
-    MergerSort(array, 0, 11, copyArray);
+//   TestFindInsertIndex();
     
-//    TestFindInsertIndex();
+    QuickSort(array, 0, 11);
     
     displayArray(array, 11);
     return 0;
