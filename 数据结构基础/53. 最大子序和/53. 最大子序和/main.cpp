@@ -52,10 +52,16 @@ public:
 
 int main(int argc, const char * argv[]) {
 
-    vector<int> vt{-2,1,-3,4,-1,2,1,-5,4};
+    vector<int> a{-2,1,-3,4,-1,2,1,-5,4,9};
     
     Solution sl;
-    cout << "最大" << sl.maxSubArray(vt) << endl;
+    cout << "最大" << sl.maxSubArray(a) << endl;
     
+    cout  << "排序 " << endl;
+     sort(a.begin(), a.end());
+     for (vector<int>::iterator it = a.begin(); it != a.end(); it++){
+         cout << *it << "_";
+     }
+    cout << endl;
     return 0;
 }
