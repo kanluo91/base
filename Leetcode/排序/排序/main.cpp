@@ -33,42 +33,7 @@ void displayArray(int *array,int len){
 // 外循环的i 代表要重复多少次找最大值
 // 在内循环中i代表已经有i个数已经找到， len-i-2 代表内循环执行的次数
 void BubbleSort(int *array,int len){
-    
-    // 1. 自己写的
-//    for (int i = 0; i<len; i++) {
-//        for (int j=0; j<=len-i-2; j++) {
-//            if(array[j] > array[j+1]){
-//                swap(array[j], array[j+1]);
-//            }
-//        }
-//    }
-    
-    // 2. 第一个版本
-    // end 到最后一个元素
-//    for (int end = len-1; end > 0; end--) {
-//        for (int begin = 1; begin<=end; begin++) {
-//            if(array[begin] < array[begin-1]){
-//                swap(array[begin], array[begin-1]);
-//            }
-//        }
-//    }
-    
-    // 3. 如果给的序列是完全有序的
-//    for (int end = len-1; end>0; end--) {
-//        bool isSort = true;
-//        // 第一趟扫描完之后 如果没有一次交换  那么原数组本来就是有序的
-//        for (int beg = 1; beg <= end; beg++) {
-//            if(array[beg-1]>array[beg]){
-//                isSort = false;
-//                swap(array[beg-1], array[beg]);
-//            }
-//        }
-//
-//        if(isSort){
-//            break;
-//        }
-//    }
-    
+
 //    4. 如果是局部有序
     for (int end = len-1; end>0; end--) {
         bool SortIndex = end;
@@ -100,15 +65,6 @@ void SelectSort(int *arr,int len){
 #pragma mark -
 #pragma mark 3. 插入排序
 void InsertSort(int *arr,int len){
-    
-    // 1. 交换元素的方法
-//    for (int begin = 1; begin<len; begin++) {
-//        int boundsIndex = begin;
-//        while (boundsIndex>0 && Cmp(arr[boundsIndex], arr[boundsIndex-1])==false) {
-//            swap(arr[boundsIndex], arr[boundsIndex-1]);
-//            boundsIndex--;
-//        }
-//    }
     
     // 2. 优化-找到插入位置，挪动其他元素
     for (int begin=1; begin<len; begin++) {
@@ -175,14 +131,6 @@ int findInsertIndex(int *array,int len,int value){
     return begin;
 }
 
-void TestFindInsertIndex(){
-    int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
-    InsertSort(array, 11);
-    displayArray(array, 11);
-    int indx = findInsertIndex(array, 11, 10);
-    cout<<"找到插入位置"<<indx<<endl;
-}
-
 #pragma mark -
 #pragma mark 5.归并排序
 void MergeArray(int *arr,int begin,int mid,int end,int *copyArray){
@@ -237,7 +185,7 @@ int PiovtIndex(int *arr,int begin,int end){
     int piovtValue = arr[mid];
     
     swap(arr[begin], arr[mid]);
-    // 原理还是用beigin 去换  但是先把mid 和 begin 进行置换
+    // 原理还是
     
     end--;
     bool rightTravel = true;
