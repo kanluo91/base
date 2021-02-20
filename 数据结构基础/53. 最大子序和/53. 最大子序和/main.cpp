@@ -9,6 +9,8 @@
 #include <vector>
 using namespace std;
 
+#pragma mark -
+#pragma mark 分治
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
@@ -47,6 +49,57 @@ public:
         int midMax = _leftMax+_rightMax;
         
         return max(max(leftMax,rightMax),midMax);
+    }
+};
+
+
+#pragma mark -
+#pragma mark 动态规划 版本-1
+class Solution1 {
+public:
+    int maxSubArray(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        
+        int dp[nums.size()];
+        memset(dp, 0, sizeof(int)*nums.size());
+        dp[0] =  nums.front();
+        int result = dp[0];
+        for (int i = 1; i<nums.size(); i++) {
+            if(dp[i-1] >= 0)
+            {
+                dp[i] = dp[i-1] + nums.at(i);
+            }else{
+                dp[i] = nums.at(i);
+            }
+            
+            result = max(dp[i],result);
+        }
+        return result;
+    }
+};
+
+
+#pragma mark -
+#pragma mark 动态规划 版本-2 优化dp数组
+class Solution2 {
+public:
+    int maxSubArray(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        
+        int lastDP,currentDP;
+        currentDP = lastDP =  nums.front();
+        int result = lastDP;
+        for (int i = 1; i<nums.size(); i++) {
+            if(lastDP >= 0)
+            {
+                currentDP = lastDP + nums.at(i);
+            }else{
+                currentDP = nums.at(i);
+            }
+            lastDP = currentDP;
+            result = max(currentDP,result);
+        }
+        return result;
     }
 };
 
