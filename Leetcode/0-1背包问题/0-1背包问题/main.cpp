@@ -50,13 +50,51 @@ int maxpackage(vector<int> &values,vector<int> &weights,int capacity){
 }
 
 
+// 优化  使用一维数组  倒着算
+int maxpackage2(vector<int> &values,vector<int> &weights,int capacity){
+    
+    if(capacity <= 0 || weights.size() == 0 || values.size() == 0) return 0;
+    
+    int cnt = (int)values.size();
+    
+    // vector(num,value)
+    vector<int> dp(capacity+1,0);
+    
+    int result = 0;
+    for (int i = 1; i <= cnt ; i++) {
+        for (int j = capacity; j>=1; j--) {
+            
+            int weight = weights.at(i-1); // 最后一个的重量
+            // 没得选
+            if(j < weight) {
+                dp[j] = dp[j];
+            }
+            else{// 有得选
+                
+                // 1. 选的情况
+                int v1 = dp[j-weight]+ values.at(i-1);
+                
+                // 2. 不选的情况
+                int v2 = dp[j];
+                
+                dp[j] = max(v1, v2);
+                
+            }
+            result = max(result,dp[j]);
+        }
+    }
+    
+    return result;
+}
+
+
 int main(int argc, const char * argv[]) {
 
     vector<int> values{6,3,5,4,6};
     vector<int> weights{2,2,6,5,4};
     int capacity = 10;
     
-    int maxweight = maxpackage(values,weights, capacity);
+    int maxweight = maxpackage2(values,weights, capacity);
     
     cout << "最大价值" <<  maxweight << endl;
     
