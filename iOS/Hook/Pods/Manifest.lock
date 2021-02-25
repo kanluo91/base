@@ -1,0 +1,16 @@
+PODS:
+  - Aspects (1.4.1)
+
+DEPENDENCIES:
+  - Aspects (~> 1.4.1)
+
+SPEC REPOS:
+  trunk:
+    - Aspects
+
+SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+
+PODFILE CHECKSUM: 3e72493e98b011a9387ffda912af8b4e85b18253
+
+COCOAPODS: 1.9.0.beta.2
