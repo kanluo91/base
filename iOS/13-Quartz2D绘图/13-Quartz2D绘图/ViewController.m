@@ -65,6 +65,11 @@
     
 }
 
+-(void) 绘制图片_带边框{
+    
+    UIImage *image = 
+}
+
 -(void) sliderValueChange:(UISlider *) slider{
     
     self.progressView.progress = slider.value;
