@@ -42,7 +42,8 @@
     
 //    [self 画弧:ctx];
     
-    [self 圆形进度条:ctx];
+    [self 饼图:ctx];
+    
     
 }
 
@@ -140,10 +141,23 @@
     
 }
 
--(void) 圆形进度条:(CGContextRef) ctx{
+-(void) 饼图:(CGContextRef) ctx{
+    
+    CGPoint center = CGPointMake(150, 150);
+    
+    UIBezierPath *path  = [UIBezierPath bezierPathWithArcCenter:center radius:80 startAngle:0 endAngle:M_PI_2 clockwise:YES];
+    
+    
+    // 饼1
+    [path addLineToPoint:center];
+    [[UIColor greenColor] set];
+    
+    [path fill];
+    
+    // 饼2
+    
     
     
 }
-
 
 @end

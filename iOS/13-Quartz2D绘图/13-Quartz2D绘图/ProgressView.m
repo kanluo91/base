@@ -25,7 +25,7 @@
     NSLog(@"endAngle = %f\n" ,endAngle);
 
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:self.frame.size.width/2.0-5 startAngle:startAngle endAngle:endAngle clockwise:YES];
-    [[UIColor yellowColor] set];
+    [[UIColor redColor] set];
 //    [path stroke];
 
     CGContextAddPath(ctx, path.CGPath);
