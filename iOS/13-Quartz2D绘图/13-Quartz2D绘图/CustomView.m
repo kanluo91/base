@@ -42,7 +42,9 @@
     
 //    [self 画弧:ctx];
     
-    [self 饼图:ctx];
+//    [self 饼图:ctx];
+    
+    [self 文字:ctx];
     
     
 }
@@ -171,6 +173,27 @@
     
     
     
+}
+
+
+-(void) 文字:(CGContextRef) ctx{
+    
+    NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
+    
+    attribute[NSFontAttributeName] = [UIFont systemFontOfSize:30.0f];
+    attribute[NSForegroundColorAttributeName] = [UIColor redColor];
+    //描边
+//    attribute[NSStrokeColorAttributeName] = [UIColor greenColor];
+//    attribute[NSStrokeWidthAttributeName] = @2;
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor greenColor];
+    shadow.shadowOffset = CGSizeMake(3, 3);
+    shadow.shadowBlurRadius = 2.0f; // 模糊
+    attribute[NSShadowAttributeName] = shadow;
+    
+    [@"你好呀" drawAtPoint:CGPointZero withAttributes:attribute];
+
 }
 
 @end

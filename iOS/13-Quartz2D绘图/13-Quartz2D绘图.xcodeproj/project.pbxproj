@@ -16,6 +16,7 @@
 		4B9183A825E9E49F00619157 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9183A725E9E49F00619157 /* main.m */; };
 		4B9183B125E9E4B400619157 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9183B025E9E4B400619157 /* CustomView.m */; };
 		4B9183B525E9F62C00619157 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9183B425E9F62C00619157 /* ProgressView.m */; };
+		4B9183BA25EBFE6600619157 /* KKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9183B925EBFE6600619157 /* KKImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		4B9183B025E9E4B400619157 /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		4B9183B325E9F62C00619157 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		4B9183B425E9F62C00619157 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		4B9183B825EBFE6600619157 /* KKImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKImageView.h; sourceTree = "<group>"; };
+		4B9183B925EBFE6600619157 /* KKImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				4B9183B025E9E4B400619157 /* CustomView.m */,
 				4B9183B325E9F62C00619157 /* ProgressView.h */,
 				4B9183B425E9F62C00619157 /* ProgressView.m */,
+				4B9183B825EBFE6600619157 /* KKImageView.h */,
+				4B9183B925EBFE6600619157 /* KKImageView.m */,
 			);
 			path = "13-Quartz2D绘图";
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				4B9183B125E9E4B400619157 /* CustomView.m in Sources */,
 				4B91839D25E9E49E00619157 /* ViewController.m in Sources */,
 				4B91839725E9E49E00619157 /* AppDelegate.m in Sources */,
+				4B9183BA25EBFE6600619157 /* KKImageView.m in Sources */,
 				4B9183A825E9E49F00619157 /* main.m in Sources */,
 				4B91839A25E9E49E00619157 /* SceneDelegate.m in Sources */,
 				4B9183B525E9F62C00619157 /* ProgressView.m in Sources */,
