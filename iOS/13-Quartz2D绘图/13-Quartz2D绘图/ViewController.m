@@ -46,6 +46,25 @@
 
 }
 
+-(void) 绘制裁剪图片{
+    
+    UIImage *image = [UIImage imageNamed:@"001"];
+    
+    UIGraphicsBeginImageContext(image.size);
+   
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+    
+    [path addClip];
+    
+    [image drawAtPoint:CGPointZero];
+    
+    UIImage *newImage =  UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+
+    
+}
+
 -(void) sliderValueChange:(UISlider *) slider{
     
     self.progressView.progress = slider.value;
