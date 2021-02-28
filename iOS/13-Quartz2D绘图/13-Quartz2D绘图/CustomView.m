@@ -156,6 +156,19 @@
     
     // 饼2
     
+    path  =  [UIBezierPath bezierPathWithArcCenter:center radius:80 startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    
+    [[UIColor yellowColor] set];
+    [path addLineToPoint:center];
+    [path fill];
+    
+    // 饼3
+    
+    path  =  [UIBezierPath bezierPathWithArcCenter:center radius:80 startAngle:M_PI endAngle:0 clockwise:YES];
+    [[UIColor blueColor] set];
+    [path addLineToPoint:center];
+    [path fill];
+    
     
     
 }
