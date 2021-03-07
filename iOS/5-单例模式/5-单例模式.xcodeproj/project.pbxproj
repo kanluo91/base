@@ -16,6 +16,7 @@
 		4B6EF0F324AED79300BCBED0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6EF0F224AED79300BCBED0 /* main.m */; };
 		4B6EF0FB24AED83D00BCBED0 /* JJTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6EF0FA24AED83D00BCBED0 /* JJTools.m */; };
 		4B6EF10224AF113F00BCBED0 /* JJTestInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6EF10124AF113F00BCBED0 /* JJTestInstance.m */; };
+		4BE543F725F41AAB005D64B9 /* SingleInstance2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE543F625F41AAB005D64B9 /* SingleInstance2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		4B6EF0FF24AF0F5F00BCBED0 /* SingleInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleInstance.h; sourceTree = "<group>"; };
 		4B6EF10024AF113F00BCBED0 /* JJTestInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJTestInstance.h; sourceTree = "<group>"; };
 		4B6EF10124AF113F00BCBED0 /* JJTestInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJTestInstance.m; sourceTree = "<group>"; };
+		4BE543F525F41AAB005D64B9 /* SingleInstance2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleInstance2.h; sourceTree = "<group>"; };
+		4BE543F625F41AAB005D64B9 /* SingleInstance2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleInstance2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				4B6EF0FF24AF0F5F00BCBED0 /* SingleInstance.h */,
 				4B6EF10024AF113F00BCBED0 /* JJTestInstance.h */,
 				4B6EF10124AF113F00BCBED0 /* JJTestInstance.m */,
+				4BE543F525F41AAB005D64B9 /* SingleInstance2.h */,
+				4BE543F625F41AAB005D64B9 /* SingleInstance2.m */,
 			);
 			path = "5-单例模式";
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			files = (
 				4B6EF0E824AED79200BCBED0 /* ViewController.m in Sources */,
 				4B6EF0E224AED79200BCBED0 /* AppDelegate.m in Sources */,
+				4BE543F725F41AAB005D64B9 /* SingleInstance2.m in Sources */,
 				4B6EF10224AF113F00BCBED0 /* JJTestInstance.m in Sources */,
 				4B6EF0FB24AED83D00BCBED0 /* JJTools.m in Sources */,
 				4B6EF0F324AED79300BCBED0 /* main.m in Sources */,
