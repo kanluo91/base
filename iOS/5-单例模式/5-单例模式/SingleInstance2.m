@@ -7,6 +7,7 @@
 //
 
 #import "SingleInstance2.h"
+#import <UIKit/UIKit.h>
 
 @implementation SingleInstance2
 
@@ -24,8 +25,7 @@ static id _instance = nil;
         _instance = [super allocWithZone:zone];
     });
     
-    return _instance;
-    
+    return _instance;    
 }
 
 

@@ -10,6 +10,7 @@
 using namespace std;
 
 
+// 最长上升子序列
 // dp[i]  是以i为结尾的 最大序列
 // 不要求连续
 class Solution {

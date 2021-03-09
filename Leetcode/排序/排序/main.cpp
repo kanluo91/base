@@ -180,9 +180,10 @@ void MergeSort(int *arr,int begin,int end,int* copyArray){
 
 #pragma mark -
 #pragma mark 6. 快速排序
+// 找锚点位置
 int PiovtIndex(int *arr,int begin,int end){
     int mid = (begin+end)/2;
-    int piovtValue = arr[mid];
+    int piovtValue = arr[mid]; // 备份
     
     swap(arr[begin], arr[mid]);
     // 原理还是
