@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  17-通知
+//  17-Crash分析
 //
-//  Created by luokan on 2021/3/7.
+//  Created by luokan on 2021/3/13.
 //
 
 #import "AppDelegate.h"
@@ -13,9 +13,15 @@
 
 @implementation AppDelegate
 
+void MyCustonExceptionHandle(NSException * exception){
+    
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    NSSetUncaughtExceptionHandler(&MyCustonExceptionHandle);
+    
     return YES;
 }
 
