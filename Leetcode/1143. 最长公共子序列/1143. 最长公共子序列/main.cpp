@@ -39,7 +39,7 @@ public:
     }
 };
 
-// 动态规划
+// 最长公共子序列
 class Solution {
 public:
     int longestCommonSubsequence(string text1, string text2) {

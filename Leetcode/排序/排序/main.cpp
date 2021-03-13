@@ -184,15 +184,12 @@ void MergeSort(int *arr,int begin,int end,int* copyArray){
 int PiovtIndex(int *arr,int begin,int end){
     int mid = (begin+end)/2;
     int piovtValue = arr[mid]; // 备份
-    
     swap(arr[begin], arr[mid]);
     // 原理还是
-    
     end--;
     bool rightTravel = true;
     while (begin<end) {
         if(rightTravel){
-
             if(arr[end] > piovtValue){
                 end--;
                 rightTravel = true;
@@ -200,7 +197,6 @@ int PiovtIndex(int *arr,int begin,int end){
                 arr[begin++] = arr[end];
                 rightTravel = false; // 方向反转
             }
-            
         }else{
             if(arr[begin] < piovtValue){
                 begin++;
@@ -215,7 +211,6 @@ int PiovtIndex(int *arr,int begin,int end){
     return begin;
 }
 
-
 /*
  *  注意： 排序分了三个部分
  *  [begin,piovIndex)
@@ -229,6 +224,38 @@ void QuickSort(int *array,int begin,int end){
     QuickSort(array, piovtidx+1, end);
 }
 
+void swapValue(int *array,int begin,int end){
+    int tmp = array[begin];
+    array[begin] = array[end];
+    array[end] = tmp;
+}
+
+// [begin,end)
+int PiovtIndex2(int *array,int begin,int end){
+    int pivotValue = array[begin];
+    while(begin < end){
+        while(begin < end && array[end] > pivotValue){
+            end--;
+        }
+        array[begin] = array[end];
+        
+        while(begin < end && array[begin]<pivotValue){
+            begin++;
+        }
+        array[end] = array[begin];
+    }
+    array[begin]  = pivotValue;
+    return begin;
+}
+
+void QuickSort2(int *array,int begin,int end){
+    if(end - begin < 0) return;
+    end--;
+    int index = PiovtIndex2(array, begin, end);
+    QuickSort2(array, 0, index-1);
+    QuickSort2(array, index+1, end-1);
+}
+
 int main(int argc, const char * argv[]) {
     int array[11] = {1,3,12,9,8,-1,23,99,76,-3,0};
     int copyArray[5];
@@ -236,11 +263,9 @@ int main(int argc, const char * argv[]) {
 //   SelectSort(array, 11);
 //   InsertSort(array, 11);
 //   MergeSort(array, 0, 11, copyArray);
-    
 //   TestFindInsertIndex();
-    
-    QuickSort(array, 0, 11);
-    
+//    QuickSort(array, 0, 11);
+    QuickSort2(array, 0, 11);
     displayArray(array, 11);
     return 0;
 }

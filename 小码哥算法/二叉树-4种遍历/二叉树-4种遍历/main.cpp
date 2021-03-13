@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <queue>
 using namespace std;
 
 typedef struct TREENODE{
@@ -79,9 +80,8 @@ TreeNode* Top(){
     return LinkStack[top];
 }
 
-/*
- * 先序(根-左-右)
- */
+#pragma mark -
+#pragma mark 先序(根-左-右)
 void PreOrderTraversal(Tree T){
     
     struct TREENODE * p = T;
@@ -99,13 +99,10 @@ void PreOrderTraversal(Tree T){
             Push(p->left);
         }
     }
-
 }
 
-/*
- * 中序遍历：（左-根-右）
- *
- */
+#pragma mark -
+#pragma mark 中序遍历：（左-根-右）
 void MidOrderTraversal(Tree T){
     struct TREENODE *p =T;
     while (p || Top()) {
@@ -121,6 +118,9 @@ void MidOrderTraversal(Tree T){
     }
 }
 
+
+#pragma mark -
+#pragma mark 后序遍历
 void LastOrderTraversal(Tree T){
     
     
@@ -128,8 +128,9 @@ void LastOrderTraversal(Tree T){
 }
 
 
-/// 层序遍历
-/// @param T 根结点
+#pragma mark -
+#pragma mark 层序遍历
+
 void LevelOrderTraversal(Tree T){
     
     Tree Array[100];
@@ -158,13 +159,77 @@ void LevelOrderTraversal(Tree T){
     printf("\n层级:%d\n",level);
 }
 
+
+#pragma mark -
+#pragma mark 先序遍历 2
+void PreOrderTraversal2(Tree T){
+    cout << endl;
+    if(T == NULL) return;
+    stack<Tree> st;
+    st.push(T);
+    while(!st.empty()){
+        Tree top = st.top();
+        cout << top->value  << " ";
+        st.pop();
+        if(top->right){
+            st.push(top->right);
+        }
+        if(top->left){
+            st.push(top->left);
+        }
+    }
+    cout << endl;
+}
+
+#pragma mark -
+#pragma mark 层序遍历2
+void LevelOrderTraversal2(Tree T){
+    
+    if(T == NULL) return;
+    queue<Tree> q;
+    q.push(T);
+    int height = 0;
+    int levelSize = 1;// 加了一个数据
+    while (!q.empty()) {
+        // 队头 出队列
+        Tree data = q.front();
+        q.pop();
+        levelSize--;
+        if(q.empty()){
+            height++;
+        }
+        cout << data->value << " ";
+        if(data->left){
+            q.push(data->left);
+        }
+        if(data->right){
+            q.push(data->right);
+        }
+        if(levelSize == 0){
+            levelSize = q.size();
+            height++;
+        }
+    }
+    cout << endl;
+    cout << "height = " << height <<endl;
+}
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    
     Tree t;
     InitTree(t);
 //    PreOrderTraversal(t);
+//    PreOrderTraversal2(t);
 //    MidOrderTraversal(t);
-    LevelOrderTraversal(t);
+//    LevelOrderTraversal(t);
+    LevelOrderTraversal2(t);
+    
+//    vector<int> vt;
+//    vt.push_back(1);
+//    vt.push_back(2);
+//
+//    cout << vt[1] << endl;
+    
     printf("\n");
     return 0;
 }
