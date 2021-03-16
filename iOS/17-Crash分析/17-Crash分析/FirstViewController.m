@@ -19,8 +19,8 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-//    [self crash01];
-    [self crash02];
+    [self crash01];
+//    [self crash02];
     
 //    SecondViewController *second = [SecondViewController new];
 //    [self.navigationController pushViewController:second animated:YES];

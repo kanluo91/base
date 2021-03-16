@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  17-Crash分析
+//  21-load&initial
 //
-//  Created by luokan on 2021/3/13.
+//  Created by luokan on 2021/3/15.
 //
 
 #import "AppDelegate.h"
@@ -13,40 +13,15 @@
 
 @implementation AppDelegate
 
-static bool canDimiss = NO;
-
-void MyCustonExceptionHandle(NSException * exception){
-    NSLog(@"程序崩溃了  前\n");
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"崩溃日志上传完毕\n");
-        canDimiss = YES;
-    });
-    
-    CFRunLoopRef runloop = CFRunLoopGetCurrent();
-    CFArrayRef allModels = CFRunLoopCopyAllModes(runloop);
-    while (!canDimiss) {
-        for (NSString *model in (__bridge  NSArray *)allModels) {
-            CFRunLoopRunInMode((CFStringRef)model, 0.0001, false);
-        }
-    }
-    CFRelease(allModels);
-    
-    NSLog(@"程序崩溃了  后\n");
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-//    NSSetUncaughtExceptionHandler(&MyCustonExceptionHandle);
-    
+    // Override point for customization after application launch.
     return YES;
 }
 
--(void)applicationWillTerminate:(UIApplication *)application{
-    NSLog(@"崩溃  applicationWillTerminate\n");
-}
 
 #pragma mark - UISceneSession lifecycle
+
 
 - (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
     // Called when a new scene session is being created.
