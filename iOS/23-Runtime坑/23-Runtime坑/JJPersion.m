@@ -8,9 +8,13 @@
 #import "JJPersion.h"
 
 @implementation JJPersion
+//@dynamic name;
+@synthesize name = _pName;
+
+int age = 10;
 
 -(void) persionInstanceMethod{
-    NSLog(@"Persion Instance Method Invoke");
+    NSLog(@"Persion Instance Method Invoke %@",_pName);
 }
 
 +(void) persionClassMethod{

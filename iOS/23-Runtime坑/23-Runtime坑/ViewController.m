@@ -22,6 +22,7 @@
     [NSObject swizzleCls:[JJStudent class] Sel:@selector(persionInstanceMethod) WithSel:@selector(studentInstanceMethod)];
     self.p = [JJPersion new];
     self.st = [JJStudent new];
+    self.p.name = @"231";
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -31,7 +32,10 @@
     // 子类修改了
     [self.st persionInstanceMethod];
     [self.st studentInstanceMethod];
-
+    extern int age; //申明使用的是全局变量age
+    NSLog(@"age = %d",age);
+    age = 20;
+    NSLog(@"age = %d",age);
 }
 
 @end
