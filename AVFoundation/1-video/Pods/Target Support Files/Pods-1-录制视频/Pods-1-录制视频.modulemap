@@ -1,0 +1,6 @@
+framework module Pods_1_____ {
+  umbrella header "Pods-1-录制视频-umbrella.h"
+
+  export *
+  module * { export * }
+}
