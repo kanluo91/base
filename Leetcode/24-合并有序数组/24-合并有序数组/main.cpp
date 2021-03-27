@@ -47,3 +47,47 @@ int* mergeArray(int *arr1,int *arr2,int len1,int len2){
     }
     return array;
 }
+
+// 添加到最后  然后做上滤
+void shiftup(int *array,int len,int shiftIndx){
+    
+    int shiftvalue = array[shiftIndx];
+    while (shiftIndx>0) {
+        int parIndex = 2*shiftIndx-1;
+        if(parIndex>0) // 有父节点
+        {
+            if(array[shiftIndx]>array[parIndex]){
+                array[shiftIndx] = array[parIndex];
+                shiftIndx = parIndex;
+            }else{
+                array[shiftIndx] = shiftvalue;
+                break;
+            }
+        }else{
+            array[shiftIndx] = shiftvalue;
+            break;
+        }
+    }
+}
+
+void shiftdown(int *array,int len,int shiftIndex){
+    
+    int left = 2*shiftIndex+1;
+    int right = 2*shiftIndex+2;
+    int shiftvalue = array[shiftIndex];
+    while(shiftIndex<len-1){
+        if(left<=len-1 && right<=len-1){//left&right
+            
+        }else if(left<=len-1){ // only left
+            if()
+            
+        }else{
+            break;
+        }
+    }
+}
+
+void headSort(int *array,int len){
+    
+    
+}
