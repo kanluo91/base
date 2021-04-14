@@ -8,10 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		4B9A539125FA1BC0009D973D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A539025FA1BC0009D973D /* main.cpp */; };
+		4BA45A9B2614DDC6005F341E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BA45A9A2614DDC6005F341E /* main.cpp */; };
+		4BA45AA82614F63D005F341E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BA45AA72614F63D005F341E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4B9A538B25FA1BC0009D973D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4BA45A962614DDC6005F341E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4BA45AA32614F63D005F341E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,10 +45,28 @@
 /* Begin PBXFileReference section */
 		4B9A538D25FA1BC0009D973D /* 最小的K个数 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "最小的K个数"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9A539025FA1BC0009D973D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4BA45A982614DDC6005F341E /* TopK问题 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TopK问题"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA45A9A2614DDC6005F341E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4BA45AA52614F63D005F341E /* 堆排序 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "堆排序"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA45AA72614F63D005F341E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4B9A538A25FA1BC0009D973D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA45A952614DDC6005F341E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA45AA22614F63D005F341E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				4B9A538F25FA1BC0009D973D /* 最小的K个数 */,
+				4BA45A992614DDC6005F341E /* TopK问题 */,
+				4BA45AA62614F63D005F341E /* 堆排序 */,
 				4B9A538E25FA1BC0009D973D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				4B9A538D25FA1BC0009D973D /* 最小的K个数 */,
+				4BA45A982614DDC6005F341E /* TopK问题 */,
+				4BA45AA52614F63D005F341E /* 堆排序 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +102,22 @@
 				4B9A539025FA1BC0009D973D /* main.cpp */,
 			);
 			path = "最小的K个数";
+			sourceTree = "<group>";
+		};
+		4BA45A992614DDC6005F341E /* TopK问题 */ = {
+			isa = PBXGroup;
+			children = (
+				4BA45A9A2614DDC6005F341E /* main.cpp */,
+			);
+			path = "TopK问题";
+			sourceTree = "<group>";
+		};
+		4BA45AA62614F63D005F341E /* 堆排序 */ = {
+			isa = PBXGroup;
+			children = (
+				4BA45AA72614F63D005F341E /* main.cpp */,
+			);
+			path = "堆排序";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +140,40 @@
 			productReference = 4B9A538D25FA1BC0009D973D /* 最小的K个数 */;
 			productType = "com.apple.product-type.tool";
 		};
+		4BA45A972614DDC6005F341E /* TopK问题 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA45A9E2614DDC6005F341E /* Build configuration list for PBXNativeTarget "TopK问题" */;
+			buildPhases = (
+				4BA45A942614DDC6005F341E /* Sources */,
+				4BA45A952614DDC6005F341E /* Frameworks */,
+				4BA45A962614DDC6005F341E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TopK问题";
+			productName = "TopK问题";
+			productReference = 4BA45A982614DDC6005F341E /* TopK问题 */;
+			productType = "com.apple.product-type.tool";
+		};
+		4BA45AA42614F63D005F341E /* 堆排序 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA45AA92614F63D005F341E /* Build configuration list for PBXNativeTarget "堆排序" */;
+			buildPhases = (
+				4BA45AA12614F63D005F341E /* Sources */,
+				4BA45AA22614F63D005F341E /* Frameworks */,
+				4BA45AA32614F63D005F341E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "堆排序";
+			productName = "堆排序";
+			productReference = 4BA45AA52614F63D005F341E /* 堆排序 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +184,12 @@
 				TargetAttributes = {
 					4B9A538C25FA1BC0009D973D = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					4BA45A972614DDC6005F341E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4BA45AA42614F63D005F341E = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -109,6 +207,8 @@
 			projectRoot = "";
 			targets = (
 				4B9A538C25FA1BC0009D973D /* 最小的K个数 */,
+				4BA45A972614DDC6005F341E /* TopK问题 */,
+				4BA45AA42614F63D005F341E /* 堆排序 */,
 			);
 		};
 /* End PBXProject section */
@@ -119,6 +219,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9A539125FA1BC0009D973D /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA45A942614DDC6005F341E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA45A9B2614DDC6005F341E /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BA45AA12614F63D005F341E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA45AA82614F63D005F341E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +372,46 @@
 			};
 			name = Release;
 		};
+		4BA45A9C2614DDC6005F341E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4BA45A9D2614DDC6005F341E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4BA45AAA2614F63D005F341E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4BA45AAB2614F63D005F341E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -273,6 +429,24 @@
 			buildConfigurations = (
 				4B9A539525FA1BC0009D973D /* Debug */,
 				4B9A539625FA1BC0009D973D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BA45A9E2614DDC6005F341E /* Build configuration list for PBXNativeTarget "TopK问题" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA45A9C2614DDC6005F341E /* Debug */,
+				4BA45A9D2614DDC6005F341E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BA45AA92614F63D005F341E /* Build configuration list for PBXNativeTarget "堆排序" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA45AAA2614F63D005F341E /* Debug */,
+				4BA45AAB2614F63D005F341E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

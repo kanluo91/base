@@ -10,6 +10,11 @@
 		4B248346260F7F1900010260 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B248345260F7F1900010260 /* main.cpp */; };
 		4B248354260F7FB000010260 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B248353260F7FB000010260 /* main.cpp */; };
 		4B248362260F85B200010260 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B248361260F85B200010260 /* main.cpp */; };
+		4B248370260F91C300010260 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B24836F260F91C300010260 /* main.cpp */; };
+		4B651A7026156FD300A869BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B651A6F26156FD300A869BA /* main.cpp */; };
+		4B7DB9652611F0B90079633D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DB9642611F0B90079633D /* main.cpp */; };
+		4B7DB9822612D3660079633D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DB9812612D3660079633D /* main.cpp */; };
+		4B7DB9932612FF1C0079633D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DB9922612FF1C0079633D /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +45,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		4B24836B260F91C300010260 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4B651A6B26156FD300A869BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4B7DB9562611F0AD0079633D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4B7DB97D2612D3660079633D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		4B7DB98E2612FF1C0079633D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +99,16 @@
 		4B248353260F7FB000010260 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4B24835F260F85B200010260 /* 151. 翻转字符串里的单词 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "151. 翻转字符串里的单词"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B248361260F85B200010260 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B24836D260F91C300010260 /* 3. 无重复字符的最长子串 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "3. 无重复字符的最长子串"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B24836F260F91C300010260 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B651A6D26156FD300A869BA /* 堆 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "堆"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B651A6F26156FD300A869BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B7DB9582611F0AD0079633D /* 字符转数字 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "字符转数字"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7DB9642611F0B90079633D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B7DB97F2612D3660079633D /* 判断回文 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "判断回文"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7DB9812612D3660079633D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4B7DB9902612FF1C0079633D /* 旋转数组 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "旋转数组"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7DB9922612FF1C0079633D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +133,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4B24836A260F91C300010260 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B651A6A26156FD300A869BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB9552611F0AD0079633D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB97C2612D3660079633D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB98D2612FF1C0079633D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +177,11 @@
 				4B248344260F7F1900010260 /* 算法合集 */,
 				4B248352260F7FB000010260 /* 快排 */,
 				4B248360260F85B200010260 /* 151. 翻转字符串里的单词 */,
+				4B24836E260F91C300010260 /* 3. 无重复字符的最长子串 */,
+				4B7DB9592611F0AD0079633D /* 字符转数字 */,
+				4B7DB9802612D3660079633D /* 判断回文 */,
+				4B7DB9912612FF1C0079633D /* 旋转数组 */,
+				4B651A6E26156FD300A869BA /* 堆 */,
 				4B248343260F7F1900010260 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +192,11 @@
 				4B248342260F7F1900010260 /* 算法合集 */,
 				4B248351260F7FB000010260 /* 快排 */,
 				4B24835F260F85B200010260 /* 151. 翻转字符串里的单词 */,
+				4B24836D260F91C300010260 /* 3. 无重复字符的最长子串 */,
+				4B7DB9582611F0AD0079633D /* 字符转数字 */,
+				4B7DB97F2612D3660079633D /* 判断回文 */,
+				4B7DB9902612FF1C0079633D /* 旋转数组 */,
+				4B651A6D26156FD300A869BA /* 堆 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +223,46 @@
 				4B248361260F85B200010260 /* main.cpp */,
 			);
 			path = "151. 翻转字符串里的单词";
+			sourceTree = "<group>";
+		};
+		4B24836E260F91C300010260 /* 3. 无重复字符的最长子串 */ = {
+			isa = PBXGroup;
+			children = (
+				4B24836F260F91C300010260 /* main.cpp */,
+			);
+			path = "3. 无重复字符的最长子串";
+			sourceTree = "<group>";
+		};
+		4B651A6E26156FD300A869BA /* 堆 */ = {
+			isa = PBXGroup;
+			children = (
+				4B651A6F26156FD300A869BA /* main.cpp */,
+			);
+			path = "堆";
+			sourceTree = "<group>";
+		};
+		4B7DB9592611F0AD0079633D /* 字符转数字 */ = {
+			isa = PBXGroup;
+			children = (
+				4B7DB9642611F0B90079633D /* main.cpp */,
+			);
+			path = "字符转数字";
+			sourceTree = "<group>";
+		};
+		4B7DB9802612D3660079633D /* 判断回文 */ = {
+			isa = PBXGroup;
+			children = (
+				4B7DB9812612D3660079633D /* main.cpp */,
+			);
+			path = "判断回文";
+			sourceTree = "<group>";
+		};
+		4B7DB9912612FF1C0079633D /* 旋转数组 */ = {
+			isa = PBXGroup;
+			children = (
+				4B7DB9922612FF1C0079633D /* main.cpp */,
+			);
+			path = "旋转数组";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +319,91 @@
 			productReference = 4B24835F260F85B200010260 /* 151. 翻转字符串里的单词 */;
 			productType = "com.apple.product-type.tool";
 		};
+		4B24836C260F91C300010260 /* 3. 无重复字符的最长子串 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B248371260F91C300010260 /* Build configuration list for PBXNativeTarget "3. 无重复字符的最长子串" */;
+			buildPhases = (
+				4B248369260F91C300010260 /* Sources */,
+				4B24836A260F91C300010260 /* Frameworks */,
+				4B24836B260F91C300010260 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "3. 无重复字符的最长子串";
+			productName = "3. 无重复字符的最长子串";
+			productReference = 4B24836D260F91C300010260 /* 3. 无重复字符的最长子串 */;
+			productType = "com.apple.product-type.tool";
+		};
+		4B651A6C26156FD300A869BA /* 堆 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B651A7326156FD300A869BA /* Build configuration list for PBXNativeTarget "堆" */;
+			buildPhases = (
+				4B651A6926156FD300A869BA /* Sources */,
+				4B651A6A26156FD300A869BA /* Frameworks */,
+				4B651A6B26156FD300A869BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "堆";
+			productName = "堆";
+			productReference = 4B651A6D26156FD300A869BA /* 堆 */;
+			productType = "com.apple.product-type.tool";
+		};
+		4B7DB9572611F0AD0079633D /* 字符转数字 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7DB95C2611F0AD0079633D /* Build configuration list for PBXNativeTarget "字符转数字" */;
+			buildPhases = (
+				4B7DB9542611F0AD0079633D /* Sources */,
+				4B7DB9552611F0AD0079633D /* Frameworks */,
+				4B7DB9562611F0AD0079633D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "字符转数字";
+			productName = "字符转数字";
+			productReference = 4B7DB9582611F0AD0079633D /* 字符转数字 */;
+			productType = "com.apple.product-type.tool";
+		};
+		4B7DB97E2612D3660079633D /* 判断回文 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7DB9852612D3660079633D /* Build configuration list for PBXNativeTarget "判断回文" */;
+			buildPhases = (
+				4B7DB97B2612D3660079633D /* Sources */,
+				4B7DB97C2612D3660079633D /* Frameworks */,
+				4B7DB97D2612D3660079633D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "判断回文";
+			productName = "判断回文";
+			productReference = 4B7DB97F2612D3660079633D /* 判断回文 */;
+			productType = "com.apple.product-type.tool";
+		};
+		4B7DB98F2612FF1C0079633D /* 旋转数组 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7DB9942612FF1C0079633D /* Build configuration list for PBXNativeTarget "旋转数组" */;
+			buildPhases = (
+				4B7DB98C2612FF1C0079633D /* Sources */,
+				4B7DB98D2612FF1C0079633D /* Frameworks */,
+				4B7DB98E2612FF1C0079633D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "旋转数组";
+			productName = "旋转数组";
+			productReference = 4B7DB9902612FF1C0079633D /* 旋转数组 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,6 +419,21 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					4B24835E260F85B200010260 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4B24836C260F91C300010260 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4B651A6C26156FD300A869BA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4B7DB9572611F0AD0079633D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4B7DB97E2612D3660079633D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4B7DB98F2612FF1C0079633D = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -209,6 +454,11 @@
 				4B248341260F7F1900010260 /* 算法合集 */,
 				4B248350260F7FB000010260 /* 快排 */,
 				4B24835E260F85B200010260 /* 151. 翻转字符串里的单词 */,
+				4B24836C260F91C300010260 /* 3. 无重复字符的最长子串 */,
+				4B7DB9572611F0AD0079633D /* 字符转数字 */,
+				4B7DB97E2612D3660079633D /* 判断回文 */,
+				4B7DB98F2612FF1C0079633D /* 旋转数组 */,
+				4B651A6C26156FD300A869BA /* 堆 */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +485,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B248362260F85B200010260 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B248369260F91C300010260 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B248370260F91C300010260 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B651A6926156FD300A869BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B651A7026156FD300A869BA /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB9542611F0AD0079633D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7DB9652611F0B90079633D /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB97B2612D3660079633D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7DB9822612D3660079633D /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7DB98C2612FF1C0079633D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7DB9932612FF1C0079633D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +702,106 @@
 			};
 			name = Release;
 		};
+		4B248372260F91C300010260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B248373260F91C300010260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B651A7126156FD300A869BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B651A7226156FD300A869BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B7DB95D2611F0AD0079633D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B7DB95E2611F0AD0079633D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B7DB9832612D3660079633D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B7DB9842612D3660079633D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B7DB9952612FF1C0079633D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B7DB9962612FF1C0079633D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573HY9F79B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -447,6 +837,51 @@
 			buildConfigurations = (
 				4B248364260F85B200010260 /* Debug */,
 				4B248365260F85B200010260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B248371260F91C300010260 /* Build configuration list for PBXNativeTarget "3. 无重复字符的最长子串" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B248372260F91C300010260 /* Debug */,
+				4B248373260F91C300010260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B651A7326156FD300A869BA /* Build configuration list for PBXNativeTarget "堆" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B651A7126156FD300A869BA /* Debug */,
+				4B651A7226156FD300A869BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7DB95C2611F0AD0079633D /* Build configuration list for PBXNativeTarget "字符转数字" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7DB95D2611F0AD0079633D /* Debug */,
+				4B7DB95E2611F0AD0079633D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7DB9852612D3660079633D /* Build configuration list for PBXNativeTarget "判断回文" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7DB9832612D3660079633D /* Debug */,
+				4B7DB9842612D3660079633D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7DB9942612FF1C0079633D /* Build configuration list for PBXNativeTarget "旋转数组" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7DB9952612FF1C0079633D /* Debug */,
+				4B7DB9962612FF1C0079633D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

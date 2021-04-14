@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    int count = [NSProcessInfo processInfo].activeProcessorCount;
+    
     self.group = dispatch_group_create();
     
     self.myConCurrentQueue = dispatch_queue_create("com.kk.luo", DISPATCH_QUEUE_CONCURRENT);

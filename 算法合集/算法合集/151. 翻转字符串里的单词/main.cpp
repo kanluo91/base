@@ -46,7 +46,7 @@ public:
         s[fillidx] = '\0';
         
         // 逆序
-        int currentlen = fillidx-1;
+        int currentlen = fillidx;
         reverse(s, 0, currentlen);
         int begin = 0;
         for (int i = 0; i<=currentlen; i++) {
@@ -54,7 +54,7 @@ public:
                 reverse(s, begin, i);
                 begin = i+1;
             }else if(s[i] == '\0'){
-                reverse(s, begin, i-1);
+                reverse(s, begin, i);
                 begin = i+1;
             }
         }
