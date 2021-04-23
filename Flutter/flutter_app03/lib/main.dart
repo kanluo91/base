@@ -42,13 +42,13 @@ class MyHomeContentWidget extends State<MyHomeContent>{
          Row(
            mainAxisAlignment: MainAxisAlignment.center
            ,children: [
-            RaisedButton(child: Text("+",style: TextStyle(fontSize: 20,color: Colors.red),),onPressed: (){
+            RaisedButton(child: Icon(Icons.add),onPressed: (){
             setState(() {
               cnt++;
             });
 
             }),
-           RaisedButton(child: Text("-",style: TextStyle(fontSize: 20,color: Colors.red),),onPressed: (){
+           RaisedButton(child: Icon(Icons.reduce_capacity),onPressed: (){
             setState(() {
               cnt--;
             });
@@ -60,3 +60,4 @@ class MyHomeContentWidget extends State<MyHomeContent>{
      ));
   }
 }
+
