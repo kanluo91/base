@@ -47,7 +47,7 @@ class _HomePageContentState extends State<HomePageContent> {
 
   @override
   Widget build(BuildContext context) {
-    return JsonDemo1(this.datas);// qing
+    return JsonDemo1(this.datas);
   }
 }
 
